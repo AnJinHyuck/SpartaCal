@@ -137,5 +137,6 @@ fun result(num1:Int, num2:Int, operator: String?) {
     println("결과는 ${result}")
 }
 // 이제 소수점을 입력했을때도 작동하게 만들어야 함
+// 좀 더 효율적이게, 좀더 가독성 좋게
 
 
