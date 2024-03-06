@@ -5,10 +5,9 @@ import android.os.Bundle
 import kotlin.time.times
 
 class Calculater() {
-
 }
     fun main() {
-        //val canCalculater = listOf("+","-","*","/")
+        val canCalculater = listOf("+","-","*","/")
 
         while (true) {
             println("숫자를 입력해주세요. (종료를 원하시면 '종료'를 입력하세요)")
@@ -30,12 +29,18 @@ class Calculater() {
             println("원하는 연산자를 입력하세요")
             var operator = readln()
 
+            while(operator !in canCalculater){
+                println("+ - * / 중에 하나를 입력하세요")
+                operator = readln()
+            }
+
             //올바른 연산자가 맞는지 확인하는 코드
 
             println("다음 숫자를 입력해주세요")
             var num2 = readln().toIntOrNull()
+
             while(num2 == null){
-                println("숫자를 입력하세요")
+                println("두 번째 숫자를 입력하세요")
                 num2 = readln().toIntOrNull()
             }
 
@@ -55,7 +60,6 @@ fun result(num1:Int, num2:Int, operator: String?) {
         "*" -> num1 * num2
         "/" -> num1 / num2
         else -> {
-            println("지원하지 않는 연산자입니다 +,-,*,/ 중에 입력해주세요")
             return
         }
    }
