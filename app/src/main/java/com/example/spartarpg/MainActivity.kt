@@ -70,6 +70,7 @@ fun result(num1:Int, num2:Int, operator: String?) {
 
 // 클래스를 이용한 계산기 03.06 수정
 fun main() {
+
    var resultOfCal = Calculater()
 
     resultOfCal.cal()
@@ -77,9 +78,10 @@ fun main() {
 }
    class  Calculater() {
        fun cal() {
-           val canCalculater = listOf("+", "-", "*", "/")
+           val canCalculater = listOf("+", "-", "*", "/","%")
 
            while (true) {
+
                println("숫자를 입력해주세요. (종료를 원하시면 '종료'를 입력하세요)")
                val exit = readln()
 
@@ -100,7 +102,7 @@ fun main() {
                var operator = readln()
 
                while (operator !in canCalculater) {
-                   println("+ - * / 중에 하나를 입력하세요")
+                   println("+ - * / %중에 하나를 입력하세요")
                    operator = readln()
                }
 
@@ -123,12 +125,15 @@ fun main() {
 
        }
    }
+
+
 fun result(num1:Int, num2:Int, operator: String?) {
     var result = when (operator) {
         "+" -> num1 + num2
         "-" -> num1 - num2
         "*" -> num1 * num2
         "/" -> num1 / num2
+        "%" -> num1 % num2
         else -> {
             return
         }
@@ -136,7 +141,8 @@ fun result(num1:Int, num2:Int, operator: String?) {
 
     println("결과는 ${result}")
 }
+
 // 이제 소수점을 입력했을때도 작동하게 만들어야 함
 // 좀 더 효율적이게, 좀더 가독성 좋게
-
+// trycatch???
 
